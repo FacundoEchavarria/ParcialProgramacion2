@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParcialProgramacion2.Funciones
 {
-    internal class BotonAgregar
+    internal class Validaciones
     {
     }
 }

@@ -35,32 +35,43 @@ namespace ParcialProgramacion2.Db.Conexion
         }
 
         // Metodo para guardar un nuevo alumno en la base de datos
-        public bool GuardarAlumno(Alumno obj)
+        public (bool, string) GuardarAlumno(Alumno obj)
         {
             bool respuesta = true;
+            string mensaje = "Alumno guardado exitosamente.";
 
-            using (SQLiteConnection conn = new SQLiteConnection(cadena))
+            try
             {
-                conn.Open();
-                string query = "INSERT INTO Alumnos (Nombre, Apellido, FechaNacimiento, Edad, Email, AnioIngreso) " +
-                               "VALUES (@Nombre, @Apellido, @FechaNacimiento, @Edad, @Email, @AnioIngreso)";
-
-                SQLiteCommand cmd = new SQLiteCommand(query, conn);
-                cmd.Parameters.Add(new SQLiteParameter("@Nombre", obj.Nombre));
-                cmd.Parameters.Add(new SQLiteParameter("@Apellido", obj.Apellido));
-                cmd.Parameters.Add(new SQLiteParameter("@FechaNacimiento", obj.FechaNacimiento));
-                cmd.Parameters.Add(new SQLiteParameter("@Edad", obj.Edad));
-                cmd.Parameters.Add(new SQLiteParameter("@Email", obj.Email));
-                cmd.Parameters.Add(new SQLiteParameter("@AnioIngreso", obj.AnioIngreso));
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                if (cmd.ExecuteNonQuery() < 1)
+                using (SQLiteConnection conn = new SQLiteConnection(cadena))
                 {
-                    respuesta = false;
+                    conn.Open();
+                    string query = "INSERT INTO Alumnos (Nombre, Apellido, FechaNacimiento, Edad, Email, AnioIngreso) " +
+                                   "VALUES (@Nombre, @Apellido, @FechaNacimiento, @Edad, @Email, @AnioIngreso)";
+
+                    SQLiteCommand cmd = new SQLiteCommand(query, conn);
+                    cmd.Parameters.Add(new SQLiteParameter("@Nombre", obj.Nombre));
+                    cmd.Parameters.Add(new SQLiteParameter("@Apellido", obj.Apellido));
+                    cmd.Parameters.Add(new SQLiteParameter("@FechaNacimiento", obj.FechaNacimiento));
+                    cmd.Parameters.Add(new SQLiteParameter("@Edad", obj.Edad));
+                    cmd.Parameters.Add(new SQLiteParameter("@Email", obj.Email));
+                    cmd.Parameters.Add(new SQLiteParameter("@AnioIngreso", obj.AnioIngreso));
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    if (cmd.ExecuteNonQuery() < 1)
+                    {
+                        respuesta = false;
+                    }
                 }
-                return respuesta;
+            }
+            catch (SQLiteException ex)
+            {
+                respuesta = false;
+                mensaje = "Error al guardar el alumno: " + ex.Message;
+
+                Console.WriteLine("Error al guardar el alumno: " + ex.Message);
             }
 
+            return (respuesta, mensaje);
         }
 
         //Metodo para listar todos los alumnos de la base de datos
