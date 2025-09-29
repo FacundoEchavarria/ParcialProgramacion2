@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ParcialProgramacion2.Db.Conexion;
+using ParcialProgramacion2.Db.Modelos;
+
 namespace ParcialProgramacion2
 {
     public partial class Form1 : Form
@@ -39,7 +42,7 @@ namespace ParcialProgramacion2
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
