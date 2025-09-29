@@ -44,6 +44,8 @@ partial class Form1
             this.VerTabla = new System.Windows.Forms.DataGridView();
             this.buscar_txt = new System.Windows.Forms.TextBox();
             this.buscar_btn = new System.Windows.Forms.Button();
+            this.ingreso_lbl = new System.Windows.Forms.Label();
+            this.ingreso_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.VerTabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,7 +181,7 @@ partial class Form1
             this.VerTabla.Name = "VerTabla";
             this.VerTabla.RowHeadersWidth = 51;
             this.VerTabla.RowTemplate.Height = 24;
-            this.VerTabla.Size = new System.Drawing.Size(591, 440);
+            this.VerTabla.Size = new System.Drawing.Size(592, 488);
             this.VerTabla.TabIndex = 21;
             // 
             // buscar_txt
@@ -200,12 +202,33 @@ partial class Form1
             this.buscar_btn.Text = "Buscar";
             this.buscar_btn.UseVisualStyleBackColor = true;
             // 
+            // ingreso_lbl
+            // 
+            this.ingreso_lbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ingreso_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ingreso_lbl.Location = new System.Drawing.Point(13, 255);
+            this.ingreso_lbl.Name = "ingreso_lbl";
+            this.ingreso_lbl.Size = new System.Drawing.Size(124, 27);
+            this.ingreso_lbl.TabIndex = 25;
+            this.ingreso_lbl.Text = "Ingreso";
+            this.ingreso_lbl.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // ingreso_txt
+            // 
+            this.ingreso_txt.Location = new System.Drawing.Point(156, 259);
+            this.ingreso_txt.Multiline = true;
+            this.ingreso_txt.Name = "ingreso_txt";
+            this.ingreso_txt.Size = new System.Drawing.Size(252, 27);
+            this.ingreso_txt.TabIndex = 26;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1164, 652);
+            this.Controls.Add(this.ingreso_txt);
+            this.Controls.Add(this.ingreso_lbl);
             this.Controls.Add(this.buscar_btn);
             this.Controls.Add(this.buscar_txt);
             this.Controls.Add(this.VerTabla);
@@ -222,7 +245,7 @@ partial class Form1
             this.Controls.Add(this.apellido_lbl);
             this.Controls.Add(this.nombre_lbl);
             this.Controls.Add(this.nombre_txt);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -250,5 +273,7 @@ partial class Form1
         private System.Windows.Forms.DataGridView VerTabla;
         private System.Windows.Forms.TextBox buscar_txt;
         private System.Windows.Forms.Button buscar_btn;
+        private System.Windows.Forms.Label ingreso_lbl;
+        private System.Windows.Forms.TextBox ingreso_txt;
     }
 }
