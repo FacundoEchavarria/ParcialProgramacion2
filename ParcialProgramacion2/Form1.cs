@@ -21,15 +21,18 @@ namespace ParcialProgramacion2
             this.Load += Form1_Load;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void CargarAlumnos()
         {
             List<Alumno> lista = ConexionDB.Instancia().ListarAlumnos();
-            // Configurar que no genere columnas automáticas si querés definirlas vos
+
             dataGridView1.AutoGenerateColumns = true;
-
-            // Asignar la lista como origen de datos
+            dataGridView1.DataSource = null;
             dataGridView1.DataSource = lista;
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CargarAlumnos();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -62,6 +65,7 @@ namespace ParcialProgramacion2
             if (guardado)
             {
                 MessageBox.Show(mensaje);
+                CargarAlumnos();
             }
             else
             {
