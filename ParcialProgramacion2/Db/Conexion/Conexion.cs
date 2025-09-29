@@ -85,7 +85,6 @@ namespace ParcialProgramacion2.Db.Conexion
                             Nombre = datos["Nombre"].ToString(),
                             Apellido = datos["Apellido"].ToString(),
                             FechaNacimiento = Convert.ToDateTime(datos["FechaNacimiento"]),
-                            Edad = Convert.ToInt32(datos["Edad"]),
                             Email = datos["Email"].ToString(),
                             AnioIngreso = Convert.ToInt32(datos["AnioIngreso"])
                         });
