@@ -68,7 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Benjamin.cs" />
+    <Compile Include="Db\Conexion\Actualizar.cs" />
     <Compile Include="Db\Conexion\Conexion.cs" />
+    <Compile Include="Db\Conexion\Crear.cs" />
+    <Compile Include="Db\Conexion\Eliminar.cs" />
+    <Compile Include="Db\Conexion\Leer.cs" />
     <Compile Include="Db\Modelos\Alumno.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

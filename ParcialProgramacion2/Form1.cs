@@ -21,13 +21,9 @@ namespace ParcialProgramacion2
             this.Load += Form1_Load;
         }
 
-        private void CargarAlumnos()
+        private void CargarAlumnos(string filtro = "")
         {
-            List<Alumno> lista = ConexionDB.Instancia().ListarAlumnos();
-
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = lista;
+            dataGridView1.DataSource = ConexionDB.Instancia().ListarAlumnos(filtro);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -75,7 +71,7 @@ namespace ParcialProgramacion2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(ConexionDB.Instancia().ListarAlumnos()[0].Nombre);
+            
         }
 
         private void label1_Click_1(object sender, EventArgs e)

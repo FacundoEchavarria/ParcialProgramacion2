@@ -14,17 +14,5 @@ namespace ParcialProgramacion2.Db.Modelos
         public DateTime FechaNacimiento { get; set; }
         public string Email { get; set; }
         public int AnioIngreso { get; set; }
-
-        public int Edad
-        {
-            get
-            {
-                DateTime hoy = DateTime.Today;
-                int edad = hoy.Year - FechaNacimiento.Year;
-                if (hoy < FechaNacimiento.AddYears(edad))
-                    edad--;
-                return edad;
-            }
-        }
     }
 }
