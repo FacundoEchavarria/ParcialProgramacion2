@@ -35,7 +35,7 @@ namespace ParcialProgramacion2
                 {
                     Nombre = nombre_txt.Text,
                     Apellido = apellido_txt.Text,
-                    FechaNacimiento = DateTime.Parse(nacimiento_txt.Text),
+                    FechaNacimiento = nacimiento_dtp.Value,
                     Email = email_txt.Text,
                     AnioIngreso = int.Parse(ingreso_txt.Text)
                 };
@@ -73,7 +73,7 @@ namespace ParcialProgramacion2
                     Id = int.Parse(id_txt.Text),
                     Nombre = nombre_txt.Text,
                     Apellido = apellido_txt.Text,
-                    FechaNacimiento = DateTime.Parse(nacimiento_txt.Text),
+                    FechaNacimiento = nacimiento_dtp.Value,
                     Email = email_txt.Text,
                     AnioIngreso = int.Parse(ingreso_txt.Text)
                 };
@@ -141,7 +141,12 @@ namespace ParcialProgramacion2
                 id_txt.Text = VerTabla.Rows[e.RowIndex].Cells["Id"].Value.ToString();
                 nombre_txt.Text = VerTabla.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                 apellido_txt.Text = VerTabla.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
-                nacimiento_txt.Text = VerTabla.Rows[e.RowIndex].Cells["FechaNacimiento"].Value.ToString();
+
+                if (DateTime.TryParse(VerTabla.Rows[e.RowIndex].Cells["FechaNacimiento"].Value.ToString(), out DateTime fechaNac))
+                {
+                    nacimiento_dtp.Value = fechaNac;
+                }
+
                 email_txt.Text = VerTabla.Rows[e.RowIndex].Cells["Email"].Value.ToString();
                 ingreso_txt.Text = VerTabla.Rows[e.RowIndex].Cells["AnioIngreso"].Value.ToString();
             }
@@ -155,7 +160,7 @@ namespace ParcialProgramacion2
             id_txt.Clear();
             nombre_txt.Clear();
             apellido_txt.Clear();
-            nacimiento_txt.Clear();
+            nacimiento_dtp.Value = DateTime.Now;
             email_txt.Clear();
             ingreso_txt.Clear();
             buscar_txt.Clear();
