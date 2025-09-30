@@ -220,6 +220,12 @@ namespace ParcialProgramacion2
                 return;
             }
 
+            if (string.IsNullOrEmpty(id_txt.Text))
+            {
+                MessageBox.Show("Selecccione un alumno para editar");
+                return;
+            }
+
             string nombre = capitalizacion(nombre_txt.Text.Trim());
             string apellido = capitalizacion(apellido_txt.Text.Trim());
 
