@@ -92,7 +92,6 @@ partial class Form1
             this.edad_lbl.Size = new System.Drawing.Size(93, 22);
             this.edad_lbl.TabIndex = 4;
             this.edad_lbl.Text = "Email";
-            this.edad_lbl.Click += new System.EventHandler(this.label4_Click);
             // 
             // nacimiento_lbl
             // 
@@ -115,7 +114,6 @@ partial class Form1
             this.id_lbl.Size = new System.Drawing.Size(93, 22);
             this.id_lbl.TabIndex = 11;
             this.id_lbl.Text = "id";
-            this.id_lbl.Click += new System.EventHandler(this.label6_Click);
             // 
             // id_txt
             // 
@@ -163,7 +161,6 @@ partial class Form1
             this.agregar_btn.TabIndex = 17;
             this.agregar_btn.Text = "Agregar";
             this.agregar_btn.UseVisualStyleBackColor = true;
-            this.agregar_btn.Click += new System.EventHandler(this.button1_Click);
             // 
             // listar_btn
             // 
@@ -175,7 +172,6 @@ partial class Form1
             this.listar_btn.TabIndex = 19;
             this.listar_btn.Text = "Listar";
             this.listar_btn.UseVisualStyleBackColor = true;
-            this.listar_btn.Click += new System.EventHandler(this.button2_Click);
             // 
             // modificar_btn
             // 
@@ -230,7 +226,6 @@ partial class Form1
             this.ingreso_lbl.Size = new System.Drawing.Size(93, 22);
             this.ingreso_lbl.TabIndex = 25;
             this.ingreso_lbl.Text = "Ingreso";
-            this.ingreso_lbl.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // ingreso_txt
             // 
@@ -248,7 +243,7 @@ partial class Form1
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(444, 396);
             this.dataGridView1.TabIndex = 27;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VerTabla_CellClick);
             // 
             // Form1
             // 
