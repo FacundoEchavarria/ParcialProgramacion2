@@ -28,7 +28,6 @@
             this.apellido_txt = new System.Windows.Forms.TextBox();
             this.email_txt = new System.Windows.Forms.TextBox();
             this.agregar_btn = new System.Windows.Forms.Button();
-            this.listar_btn = new System.Windows.Forms.Button();
             this.modificar_btn = new System.Windows.Forms.Button();
             this.VerTabla = new System.Windows.Forms.DataGridView();
             this.buscar_txt = new System.Windows.Forms.TextBox();
@@ -36,6 +35,7 @@
             this.ingreso_lbl = new System.Windows.Forms.Label();
             this.ingreso_txt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eliminar_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.VerTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -147,17 +147,6 @@
             this.agregar_btn.UseVisualStyleBackColor = true;
             this.agregar_btn.Click += new System.EventHandler(this.agregar_btn_Click);
             // 
-            // listar_btn
-            // 
-            this.listar_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listar_btn.Location = new System.Drawing.Point(143, 315);
-            this.listar_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listar_btn.Name = "listar_btn";
-            this.listar_btn.Size = new System.Drawing.Size(120, 39);
-            this.listar_btn.TabIndex = 19;
-            this.listar_btn.Text = "Listar";
-            this.listar_btn.UseVisualStyleBackColor = true;
-            // 
             // modificar_btn
             // 
             this.modificar_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,6 +157,7 @@
             this.modificar_btn.TabIndex = 20;
             this.modificar_btn.Text = "Modificar";
             this.modificar_btn.UseVisualStyleBackColor = true;
+            this.modificar_btn.Click += new System.EventHandler(this.modificar_btn_Click);
             // 
             // VerTabla
             // 
@@ -224,12 +214,24 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(499, 101);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(592, 487);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VerTabla_CellClick);
+            // 
+            // eliminar_btn
+            // 
+            this.eliminar_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminar_btn.Location = new System.Drawing.Point(143, 315);
+            this.eliminar_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.eliminar_btn.Name = "eliminar_btn";
+            this.eliminar_btn.Size = new System.Drawing.Size(120, 39);
+            this.eliminar_btn.TabIndex = 28;
+            this.eliminar_btn.Text = "Eliminar";
+            this.eliminar_btn.UseVisualStyleBackColor = true;
+            this.eliminar_btn.Click += new System.EventHandler(this.eliminar_btn_Click);
             // 
             // Form1
             // 
@@ -237,6 +239,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1164, 652);
+            this.Controls.Add(this.eliminar_btn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ingreso_txt);
             this.Controls.Add(this.ingreso_lbl);
@@ -245,7 +248,6 @@
             this.Controls.Add(this.VerTabla);
             this.Controls.Add(this.apellido_txt);
             this.Controls.Add(this.modificar_btn);
-            this.Controls.Add(this.listar_btn);
             this.Controls.Add(this.agregar_btn);
             this.Controls.Add(this.email_txt);
             this.Controls.Add(this.nacimiento_dtp);
@@ -256,7 +258,7 @@
             this.Controls.Add(this.apellido_lbl);
             this.Controls.Add(this.nombre_lbl);
             this.Controls.Add(this.nombre_txt);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.VerTabla)).EndInit();
@@ -279,7 +281,6 @@
         private System.Windows.Forms.TextBox apellido_txt;
         private System.Windows.Forms.TextBox email_txt;
         private System.Windows.Forms.Button agregar_btn;
-        private System.Windows.Forms.Button listar_btn;
         private System.Windows.Forms.Button modificar_btn;
         private System.Windows.Forms.DataGridView VerTabla;
         private System.Windows.Forms.TextBox buscar_txt;
@@ -287,5 +288,6 @@
         private System.Windows.Forms.Label ingreso_lbl;
         private System.Windows.Forms.TextBox ingreso_txt;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button eliminar_btn;
     }
 }

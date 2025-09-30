@@ -136,19 +136,20 @@ namespace ParcialProgramacion2
         // -----------------------
         private void VerTabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && VerTabla.Rows[e.RowIndex].Cells["Id"].Value != null)
+            if (e.RowIndex >= 0 && dataGridView1.Rows[e.RowIndex].Cells["Id"].Value != null)
             {
-                id_txt.Text = VerTabla.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                nombre_txt.Text = VerTabla.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                apellido_txt.Text = VerTabla.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
+                id_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                nombre_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                apellido_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
 
-                if (DateTime.TryParse(VerTabla.Rows[e.RowIndex].Cells["FechaNacimiento"].Value.ToString(), out DateTime fechaNac))
+                // CAMBIADO: convertir a DateTime y asignar al DateTimePicker
+                if (DateTime.TryParse(dataGridView1.Rows[e.RowIndex].Cells["FechaNacimiento"].Value.ToString(), out DateTime fechaNac))
                 {
                     nacimiento_dtp.Value = fechaNac;
                 }
 
-                email_txt.Text = VerTabla.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                ingreso_txt.Text = VerTabla.Rows[e.RowIndex].Cells["AnioIngreso"].Value.ToString();
+                email_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                ingreso_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["AnioIngreso"].Value.ToString();
             }
         }
 
