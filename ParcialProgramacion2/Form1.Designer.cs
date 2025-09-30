@@ -101,10 +101,12 @@
             // 
             // id_txt
             // 
+            this.id_txt.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.id_txt.Location = new System.Drawing.Point(156, 65);
             this.id_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.id_txt.Multiline = true;
             this.id_txt.Name = "id_txt";
+            this.id_txt.ReadOnly = true;
             this.id_txt.Size = new System.Drawing.Size(252, 27);
             this.id_txt.TabIndex = 12;
             // 
