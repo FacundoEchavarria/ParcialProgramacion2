@@ -24,6 +24,11 @@ namespace ParcialProgramacion2
             CargarAlumnos();
         }
 
+        private void buscar_btn_Click(object sender, EventArgs e)
+        {
+            CargarAlumnos(buscar_txt.Text);
+        }
+
         // -----------------------
         // BOTÓN AGREGAR
         // -----------------------
@@ -121,14 +126,6 @@ namespace ParcialProgramacion2
             {
                 MessageBox.Show("Error al eliminar alumno: " + ex.Message);
             }
-        }
-
-        // -----------------------
-        // BOTÓN BUSCAR
-        // -----------------------
-        private void buscar_btn_Click(object sender, EventArgs e)
-        {
-            CargarAlumnos(buscar_txt.Text);
         }
 
         // -----------------------

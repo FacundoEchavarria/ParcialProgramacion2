@@ -192,6 +192,7 @@
             this.buscar_btn.TabIndex = 24;
             this.buscar_btn.Text = "Buscar";
             this.buscar_btn.UseVisualStyleBackColor = true;
+            this.buscar_btn.Click += new System.EventHandler(this.buscar_btn_Click);
             // 
             // ingreso_lbl
             // 
