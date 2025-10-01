@@ -50,6 +50,7 @@
             // nombre_lbl
             // 
             this.nombre_lbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.nombre_lbl.Enabled = false;
             this.nombre_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre_lbl.Location = new System.Drawing.Point(12, 52);
             this.nombre_lbl.Name = "nombre_lbl";
@@ -60,6 +61,7 @@
             // apellido_lbl
             // 
             this.apellido_lbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.apellido_lbl.Enabled = false;
             this.apellido_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellido_lbl.Location = new System.Drawing.Point(12, 119);
             this.apellido_lbl.Name = "apellido_lbl";
@@ -70,6 +72,7 @@
             // edad_lbl
             // 
             this.edad_lbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.edad_lbl.Enabled = false;
             this.edad_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edad_lbl.Location = new System.Drawing.Point(12, 254);
             this.edad_lbl.Name = "edad_lbl";
@@ -80,6 +83,7 @@
             // nacimiento_lbl
             // 
             this.nacimiento_lbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.nacimiento_lbl.Enabled = false;
             this.nacimiento_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nacimiento_lbl.Location = new System.Drawing.Point(12, 186);
             this.nacimiento_lbl.Name = "nacimiento_lbl";
@@ -90,6 +94,7 @@
             // id_lbl
             // 
             this.id_lbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.id_lbl.Enabled = false;
             this.id_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id_lbl.Location = new System.Drawing.Point(12, 13);
             this.id_lbl.Name = "id_lbl";
@@ -101,6 +106,7 @@
             // 
             this.id_txt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.id_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.id_txt.Enabled = false;
             this.id_txt.ForeColor = System.Drawing.SystemColors.Window;
             this.id_txt.Location = new System.Drawing.Point(234, 13);
             this.id_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -118,7 +124,7 @@
             this.nacimiento_dtp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nacimiento_dtp.Name = "nacimiento_dtp";
             this.nacimiento_dtp.Size = new System.Drawing.Size(396, 22);
-            this.nacimiento_dtp.TabIndex = 13;
+            this.nacimiento_dtp.TabIndex = 2;
             // 
             // apellido_txt
             // 
@@ -127,7 +133,7 @@
             this.apellido_txt.Multiline = true;
             this.apellido_txt.Name = "apellido_txt";
             this.apellido_txt.Size = new System.Drawing.Size(396, 27);
-            this.apellido_txt.TabIndex = 14;
+            this.apellido_txt.TabIndex = 1;
             // 
             // email_txt
             // 
@@ -136,7 +142,7 @@
             this.email_txt.Multiline = true;
             this.email_txt.Name = "email_txt";
             this.email_txt.Size = new System.Drawing.Size(396, 27);
-            this.email_txt.TabIndex = 15;
+            this.email_txt.TabIndex = 3;
             // 
             // agregar_btn
             // 
@@ -188,6 +194,7 @@
             // ingreso_lbl
             // 
             this.ingreso_lbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ingreso_lbl.Enabled = false;
             this.ingreso_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingreso_lbl.Location = new System.Drawing.Point(12, 325);
             this.ingreso_lbl.Name = "ingreso_lbl";
@@ -202,7 +209,7 @@
             this.ingreso_txt.Multiline = true;
             this.ingreso_txt.Name = "ingreso_txt";
             this.ingreso_txt.Size = new System.Drawing.Size(396, 27);
-            this.ingreso_txt.TabIndex = 26;
+            this.ingreso_txt.TabIndex = 4;
             // 
             // dataGridView1
             // 
