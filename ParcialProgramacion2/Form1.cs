@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using ParcialProgramacion2.Db.Conexion;
 using ParcialProgramacion2.Db.Modelos;
+using ParcialProgramacion2.Validaciones;
 
 namespace ParcialProgramacion2
 {
@@ -37,19 +38,19 @@ namespace ParcialProgramacion2
             try
             {
                 // Validar campos obligatorios
-                if (!ValidarCamposObligatorios())
+                if (!ValidacionesAlumno.ValidarCamposObligatorios(nombre_txt, apellido_txt, email_txt, ingreso_txt))
                     return;
 
                 // Validar año de ingreso
-                if (!ValidarAnioIngreso(out int anioIngreso))
+                if (!ValidacionesAlumno.ValidarAnioIngreso(ingreso_txt, out int anioIngreso))
                     return;
 
                 // Validar fecha de nacimiento
-                if (!ValidarFechaNacimiento())
+                if (!ValidacionesAlumno.ValidarFechaNacimiento(nacimiento_dtp))
                     return;
 
                 // Validar email
-                if (!ValidarEmail(email_txt.Text.Trim()))
+                if (!ValidacionesAlumno.ValidarEmail(email_txt))
                     return;
 
                 // Verificar que el email no esté repetido
@@ -103,19 +104,19 @@ namespace ParcialProgramacion2
                 }
 
                 // Validar campos obligatorios
-                if (!ValidarCamposObligatorios())
+                if (!ValidacionesAlumno.ValidarCamposObligatorios(nombre_txt, apellido_txt, email_txt, ingreso_txt))
                     return;
 
                 // Validar año de ingreso
-                if (!ValidarAnioIngreso(out int anioIngreso))
+                if (!ValidacionesAlumno.ValidarAnioIngreso(ingreso_txt, out int anioIngreso))
                     return;
 
                 // Validar fecha de nacimiento
-                if (!ValidarFechaNacimiento())
+                if (!ValidacionesAlumno.ValidarFechaNacimiento(nacimiento_dtp))
                     return;
 
                 // Validar email
-                if (!ValidarEmail(email_txt.Text.Trim()))
+                if (!ValidacionesAlumno.ValidarEmail(email_txt))
                     return;
 
                 int idActual = int.Parse(id_txt.Text);
@@ -221,131 +222,6 @@ namespace ParcialProgramacion2
             email_txt.Clear();
             ingreso_txt.Clear();
             buscar_txt.Clear();
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-        // -----------------------
-        // MÉTODOS DE VALIDACIÓN
-        // -----------------------
-
-        /// <summary>
-        /// Valida que los campos obligatorios no estén vacíos
-        /// </summary>
-        private bool ValidarCamposObligatorios()
-        {
-            if (string.IsNullOrWhiteSpace(nombre_txt.Text))
-            {
-                MessageBox.Show("El campo Nombre es obligatorio.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                nombre_txt.Focus();
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(apellido_txt.Text))
-            {
-                MessageBox.Show("El campo Apellido es obligatorio.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                apellido_txt.Focus();
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(email_txt.Text))
-            {
-                MessageBox.Show("El campo Email es obligatorio.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                email_txt.Focus();
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(ingreso_txt.Text))
-            {
-                MessageBox.Show("El campo Año de Ingreso es obligatorio.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ingreso_txt.Focus();
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Valida que la fecha de nacimiento no sea futura
-        /// </summary>
-        private bool ValidarFechaNacimiento()
-        {
-            if (nacimiento_dtp.Value.Date > DateTime.Now.Date)
-            {
-                MessageBox.Show("La fecha de nacimiento no puede ser futura.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                nacimiento_dtp.Focus();
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Valida que el año de ingreso sea un número entero mayor a 2000 y no superior al año actual
-        /// </summary>
-        private bool ValidarAnioIngreso(out int anioIngreso)
-        {
-            anioIngreso = 0;
-
-            if (!int.TryParse(ingreso_txt.Text.Trim(), out anioIngreso))
-            {
-                MessageBox.Show("El Año de Ingreso debe ser un número entero válido.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ingreso_txt.Focus();
-                return false;
-            }
-
-            if (anioIngreso <= 2000)
-            {
-                MessageBox.Show("El Año de Ingreso debe ser mayor a 2000.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ingreso_txt.Focus();
-                return false;
-            }
-
-            if (anioIngreso > DateTime.Now.Year)
-            {
-                MessageBox.Show($"El Año de Ingreso no puede ser superior al año actual ({DateTime.Now.Year}).",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ingreso_txt.Focus();
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Valida que el email tenga un formato básico correcto
-        /// </summary>
-        private bool ValidarEmail(string email)
-        {
-            if (string.IsNullOrWhiteSpace(email))
-                return false;
-
-            // Validación básica de formato de email
-            if (!email.Contains("@") || !email.Contains("."))
-            {
-                MessageBox.Show("El formato del email no es válido.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                email_txt.Focus();
-                return false;
-            }
-
-            return true;
         }
     }
 }

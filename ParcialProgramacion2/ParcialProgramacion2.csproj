@@ -67,7 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Benjamin.cs" />
     <Compile Include="Db\Conexion\Actualizar.cs" />
     <Compile Include="Db\Conexion\Conexion.cs" />
     <Compile Include="Db\Conexion\Crear.cs" />
@@ -80,7 +79,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funciones\Validaciones.cs" />
+    <Compile Include="Funciones\ValidacionesAlumnos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
