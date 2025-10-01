@@ -13,7 +13,7 @@ namespace ParcialProgramacion2.Db.Conexion
             {
                 conn.Open();
                 string query = "SELECT Id, Nombre, Apellido, FechaNacimiento, " +
-                               "strftime('%Y','now') - strftime('%Y',FechaNacimiento) AS Edad, " +
+                               "(strftime('%Y','now') - strftime('%Y',FechaNacimiento)) \n   - (strftime('%m-%d','now') < strftime('%m-%d',FechaNacimiento)) AS Edad, " +
                                "Email, AnioIngreso " +
                                "FROM Alumnos";
 
